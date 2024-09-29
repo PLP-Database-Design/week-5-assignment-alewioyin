@@ -61,7 +61,7 @@ app.get('/providers', (req, res) => {
 
 /* QUESTION 3: FILTER PATIENTS BY FIRST NAME */
 app.get('/patients-firstname', (req, res) => {
-    const getPatientsFirstName = "SELECT first_name  FROM patients"
+    const getPatientsFirstName = "SELECT * FROM patients ORDER BY first_name"
     db.query(getPatientsFirstName, (err, data) => {
     //if i have an error
         if (err) {
@@ -77,7 +77,7 @@ app.get('/patients-firstname', (req, res) => {
 
 // QUESTION 4: RETRIEVE ALL PROVIDERS BY THEIR SPECIALTY
 app.get('/providers-specialty', (req, res) => {
-    const getProvidersSpecialty = "SELECT provider_specialty FROM providers"
+    const getProvidersSpecialty = "SELECT * FROM providers ORDER BY provider_specialty"
     db.query(getProvidersSpecialty, (err, data) => {
     //if i have an error
         if (err) {
